@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UfbqXDFiI/KoqdUXj0ZhPMglkrm/EpsAbdc9ldXyN0YBJ2fXt3RVkNNHEFzLZGxsa95TpA2wAxQJ01POAKMrrg==",
+  "success": true,
+  "projectFilePath": "/home/austind/Code/Godot/ML-Flappy-Bird/ML Flappy Bird.csproj",
+  "expectedPackageFiles": [
+    "/home/austind/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/austind/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
