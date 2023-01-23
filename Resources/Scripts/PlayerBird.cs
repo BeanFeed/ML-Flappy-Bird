@@ -10,6 +10,6 @@ class PlayerBird : Bird {
     }
 
     private void HandleInputs() {
-        if(Input.IsActionJustPressed("Jump")) Flap();
+        if(Input.IsActionJustPressed("Jump")) this.Flap();
     }
 }
