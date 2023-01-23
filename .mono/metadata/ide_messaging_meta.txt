@@ -1,2 +1,0 @@
-﻿36891
-/usr/share/Godot/Godot
