@@ -1,7 +1,7 @@
 using System;
 
 class NeuralNetwork {
-    public NeuralNetworkLayer[] layers = null;
+    private NeuralNetworkLayer[] layers = null;
     public NeuralNetwork(int[] layerCounts) {
         layers = new NeuralNetworkLayer[layerCounts.Length];
         layers[0] = new NeuralNetworkLayer(layerCounts[0],null);
@@ -16,9 +16,9 @@ class NeuralNetwork {
         }
     }
     public float[] getOutput() {
-        float[] output = new float[layers[layers.Length--].nodes.Length];
-        for(int i = 0; i < layers[layers.Length--].nodes.Length; i++) {
-            output[i] = layers[layers.Length--].nodes[i].value;
+        float[] output = new float[layers[layers.Length - 1].nodes.Length];
+        for(int i = 0; i < layers[layers.Length - 1].nodes.Length; i++) {
+            output[i] = layers[layers.Length - 1].nodes[i].value;
         }
         return output;
     }

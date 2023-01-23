@@ -9,11 +9,21 @@ class NeuralNetworkNode {
         this.activationBias = activationBias;
     }
 
-    public NeuralNetworkLayer(NeuralNetworkLayer previousLayer) {
-        if(previousLayer == null) return;
-
-
-    }
+    public NeuralNetworkNode(NeuralNetworkLayer previousLayer){
+		if(previousLayer == null){
+			return;
+		}
+		
+		inputWeights = new float[previousLayer.nodes.Length];
+		
+		Random random = new Random();
+		
+		for(int i = 0; i < inputWeights.Length; i++){
+			inputWeights[i] = ((float)random.NextDouble() * 2f) - 1f;
+		}
+		
+		RandomBias(random);
+	}
     public void Process(NeuralNetworkLayer previousLayer) {
         //add all values from previous layer
         float preValues = 0f;
@@ -27,7 +37,7 @@ class NeuralNetworkNode {
         if(inputWeights == null) {
             return new float[]{activationBias};
         }
-        float[] allWeights = new float[inputWeights++];
+        float[] allWeights = new float[inputWeights.Length + 1];
         for(int i = 0; i < inputWeights.Length; i++) {
             allWeights[i] = inputWeights[i];
         }
@@ -38,10 +48,10 @@ class NeuralNetworkNode {
         if(inputWeights == null) {
             activationBias = weights[0];
         }
-        for(int i = 0; i < weights.Length--; i++) {
+        for(int i = 0; i < weights.Length - 1; i++) {
             inputWeights[i] = weights[i];   
         }
-        activationBias = weights[weights.Length--];
+        activationBias = weights[weights.Length - 1];
     }
     private double LogSigmoid(double x)
 	{
@@ -49,7 +59,7 @@ class NeuralNetworkNode {
 	}
 
     public void RandomBias(Random random){
-		activiationBias = ((float)random.NextDouble() * inputWeights.Length * 2f) - inputWeights.Length;
+		activationBias = ((float)random.NextDouble() * inputWeights.Length * 2f) - inputWeights.Length;
 	}
 
     public void Mutate(Random rand) {
@@ -61,7 +71,7 @@ class NeuralNetworkNode {
 		}
 				
 		if(rand.NextDouble() < 0.01f){
-			RandomBias(random);
+			RandomBias(rand);
 		}
     }
 }

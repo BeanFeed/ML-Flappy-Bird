@@ -3,16 +3,18 @@ using System.Linq;
 
 class NeuralNetworkLayer {
     public NeuralNetworkNode[] nodes;
+    private NeuralNetworkLayer preL = null;
     public NeuralNetworkLayer(int length, NeuralNetworkLayer previousLayer) {
         nodes = new NeuralNetworkNode[length];
         for(int i = 0; i < nodes.Length; i++) {
             nodes[i] = new NeuralNetworkNode(previousLayer);
         }
+        preL = previousLayer;
     }
 
     public void Process() {
         for(int i = 0; i < nodes.Length; i++) {
-            nodes[i].Process();
+            nodes[i].Process(preL);
         }
     }
     public float[][] GetAllWeights(){
@@ -33,7 +35,7 @@ class NeuralNetworkLayer {
 
     public void Mutate(Random rand) {
         for(int i = 0; i < nodes.Length; i++) {
-            nodes[i].Mutate();
+            nodes[i].Mutate(rand);
         }
     }
 }

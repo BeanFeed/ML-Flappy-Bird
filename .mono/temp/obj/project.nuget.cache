@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "dUnkf1xHtifcjpUjJ86NWvMlNW+oIvpJL1CPzXOfVSCBqVk5aQOob10q+sAhpbkfIE2W0Qoco4qrPPn1QpYqTg==",
+  "dgSpecHash": "Tll1SYNISLTyuOsZ1exYuKzGTDh2n5LkCpUaR+y191yhnAZMih1aW3SMvqOR0+zqTyJLK1ogtC3815gbi0NbPw==",
   "success": true,
   "projectFilePath": "/home/austind/Code/Godot/ML Flappy Bird/ML Flappy Bird.csproj",
   "expectedPackageFiles": [
-    "/home/austind/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
-    "/home/austind/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512"
+    "/home/austind/.nuget/packages/newtonsoft.json/13.0.2/newtonsoft.json.13.0.2.nupkg.sha512",
+    "/home/austind/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "/home/austind/.nuget/packages/microsoft.netcore.app.ref/6.0.13/microsoft.netcore.app.ref.6.0.13.nupkg.sha512"
   ],
   "logs": []
 }
