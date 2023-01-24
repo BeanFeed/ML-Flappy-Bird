@@ -18,6 +18,8 @@ public class Pipe : KinematicBody2D
   // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
-        if(Position.x < -40) QueueFree();
+        var rand = new Random();
+        //sets position to 5 pixels right of viewport and gives new random Y value
+        if(Position.x < -40) this.Position = new Vector2(GetViewport().Size.x + 5,  rand.Next(100,(int)GetViewport().Size.y - 20));
     }
 }

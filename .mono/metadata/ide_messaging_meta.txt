@@ -1,2 +1,2 @@
-﻿44609
+39581
 /usr/share/Godot/Godot
