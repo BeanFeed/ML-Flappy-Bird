@@ -1,4 +1,3 @@
-/home/austind/Code/Godot/ML Flappy Bird/.mono/temp/bin/Debug/ML Flappy Bird.deps.json
 /home/austind/Code/Godot/ML Flappy Bird/.mono/temp/bin/Debug/ML Flappy Bird.dll
 /home/austind/Code/Godot/ML Flappy Bird/.mono/temp/bin/Debug/ML Flappy Bird.pdb
 /home/austind/Code/Godot/ML Flappy Bird/.mono/temp/obj/Debug/ML Flappy Bird.csproj.AssemblyReference.cache
@@ -7,9 +6,7 @@
 /home/austind/Code/Godot/ML Flappy Bird/.mono/temp/obj/Debug/ML Flappy Bird.AssemblyInfo.cs
 /home/austind/Code/Godot/ML Flappy Bird/.mono/temp/obj/Debug/ML Flappy Bird.csproj.CoreCompileInputs.cache
 /home/austind/Code/Godot/ML Flappy Bird/.mono/temp/obj/Debug/ML Flappy Bird.dll
-/home/austind/Code/Godot/ML Flappy Bird/.mono/temp/obj/Debug/refint/ML Flappy Bird.dll
 /home/austind/Code/Godot/ML Flappy Bird/.mono/temp/obj/Debug/ML Flappy Bird.pdb
-/home/austind/Code/Godot/ML Flappy Bird/.mono/temp/obj/Debug/ref/ML Flappy Bird.dll
 /home/austind/Code/Godot/ML-Flappy-Bird/.mono/temp/bin/Debug/ML Flappy Bird.dll
 /home/austind/Code/Godot/ML-Flappy-Bird/.mono/temp/bin/Debug/ML Flappy Bird.pdb
 /home/austind/Code/Godot/ML-Flappy-Bird/.mono/temp/obj/Debug/ML Flappy Bird.csproj.AssemblyReference.cache
@@ -21,3 +18,5 @@
 /home/austind/Code/Godot/ML-Flappy-Bird/.mono/temp/obj/Debug/ML Flappy Bird.pdb
 /home/austind/Code/Godot/ML-Flappy-Bird/.mono/temp/bin/Debug/Newtonsoft.Json.dll
 /home/austind/Code/Godot/ML-Flappy-Bird/.mono/temp/obj/Debug/ML Flappy Bird.csproj.CopyComplete
+/home/austind/Code/Godot/ML Flappy Bird/.mono/temp/bin/Debug/Newtonsoft.Json.dll
+/home/austind/Code/Godot/ML Flappy Bird/.mono/temp/obj/Debug/ML Flappy Bird.csproj.CopyComplete

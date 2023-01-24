@@ -7,6 +7,8 @@ public class PipeSpawner : Node2D
     // private int a = 2;
     // private string b = "text";
     private bool canSpawn = true;
+    [Export]
+    private int pipeSpeed = 10;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -20,6 +22,10 @@ public class PipeSpawner : Node2D
 //
 //  }
     private void Spawn() {
-        var pipe = GD.Load<PackedScene>("res://Resources/Objects/Pipe.tscn");
+        Pipe pipe = GD.Load<PackedScene>("res://Resources/Objects/Pipe.tscn").Instance<Pipe>();
+        pipe.Position = new Vector2(this.Position.x,pipe.Position.y);
+        GetNode<Node>("/root/Level/Pipes").AddChild(pipe);
+        
+        pipe.SetSpeed(pipeSpeed);
     }
 }

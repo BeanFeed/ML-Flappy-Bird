@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/austind/Code/Godot/ML-Flappy-Bird/ML Flappy Bird.csproj": {}
+    "/home/austind/Code/Godot/ML Flappy Bird/ML Flappy Bird.csproj": {}
   },
   "projects": {
-    "/home/austind/Code/Godot/ML-Flappy-Bird/ML Flappy Bird.csproj": {
+    "/home/austind/Code/Godot/ML Flappy Bird/ML Flappy Bird.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/austind/Code/Godot/ML-Flappy-Bird/ML Flappy Bird.csproj",
+        "projectUniqueName": "/home/austind/Code/Godot/ML Flappy Bird/ML Flappy Bird.csproj",
         "projectName": "ML Flappy Bird",
-        "projectPath": "/home/austind/Code/Godot/ML-Flappy-Bird/ML Flappy Bird.csproj",
+        "projectPath": "/home/austind/Code/Godot/ML Flappy Bird/ML Flappy Bird.csproj",
         "packagesPath": "/home/austind/.nuget/packages/",
-        "outputPath": "/home/austind/Code/Godot/ML-Flappy-Bird/.mono/temp/obj/",
+        "outputPath": "/home/austind/Code/Godot/ML Flappy Bird/.mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/austind/.nuget/NuGet/NuGet.Config"

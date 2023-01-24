@@ -1,13 +1,15 @@
 using Godot;
 using System;
 
-public class Pipe : KinematicBody2D
+public class Pipe : RigidBody2D
 {
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
     //public bool hasPast = false;
+    //public int speed = 10;
     public int id = 0;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -15,11 +17,15 @@ public class Pipe : KinematicBody2D
         Random rand = new Random();
         Position = new Vector2(Position.x, (float)rand.Next(100,(int)windowHeight - 20));
         id = rand.Next(0,999999);
+        //this.LinearVelocity = new Vector2(-speed, 0);
     }
-
+    public void SetSpeed(int speed) {
+        this.LinearVelocity = new Vector2(-speed, 0);
+    }
   // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
-        if(Position.x < -40) QueueFree();
+        if(this.Position.x < -40) QueueFree();
+        //this.Position
     }
 }
