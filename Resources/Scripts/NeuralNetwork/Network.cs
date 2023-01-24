@@ -1,6 +1,6 @@
 using System;
 
-class NeuralNetwork {
+public class NeuralNetwork {
     private NeuralNetworkLayer[] layers = null;
     public NeuralNetwork(int[] layerCounts) {
         layers = new NeuralNetworkLayer[layerCounts.Length];

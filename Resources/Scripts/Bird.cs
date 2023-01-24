@@ -9,6 +9,8 @@ public class Bird : RigidBody2D
 	private float startPos = 0;
 	[Export]
 	private int jumpPower = 10;
+
+	private protected int score = 0;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
