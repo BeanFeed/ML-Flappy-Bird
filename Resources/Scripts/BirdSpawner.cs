@@ -21,9 +21,9 @@ public class BirdSpawner : Node2D
         {
             var bird = GD.Load<PackedScene>("res://Resources/Objects/NNBird.tscn").Instance<NNBird>();
             bird.SetSpawner(this);
-            bird.startPos = this.Position.x;
             birds.Add(bird);
             GetNode<Node2D>("/root/Level/Birds").AddChild(bird);
+            bird.startX = Position.x;
         }
         
     }
@@ -36,7 +36,7 @@ public class BirdSpawner : Node2D
         if (birds.Count == 0) allDead = false;
         foreach (var bird in birds)
         {
-            if (!bird.dead) allDead = false;
+            if (!bird.IsDead()) allDead = false;
             break;
         }
 
@@ -51,9 +51,13 @@ public class BirdSpawner : Node2D
     {
         foreach (var bird in birds)
         {
-            bird.ReturnStats();
-            bird.dead = false;
-            bird.Position = this.Position;
+            var birdScore = bird.GetScore();
+            var birdBrainWeights = bird.Brain.GeAllWeights();
+            if (bestScore < birdScore || bestScore == 0)
+            {
+                bestScore = birdScore;
+                bestModel = birdBrainWeights;
+            }
             if (bestModel != null)
             {
                 bird.Brain.SetAllWeights(bestModel);
@@ -63,11 +67,17 @@ public class BirdSpawner : Node2D
             {
                 bird.Brain.Mutate();
             }
+            bird.Respawn();
         }
     }
 
     public void CheckAllDead()
     {
-        
+        var allDead = birds.Count != 0 ? true : false;
+        foreach (var bird in birds)
+        {
+            if (!bird.IsDead()) allDead = false;
+        }
+        if(allDead) GetNode<Level>("/root/Level").Restart();
     }
 }

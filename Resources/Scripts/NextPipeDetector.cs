@@ -13,11 +13,19 @@ public class NextPipeDetector : RayCast2D
     {
         startX = this.Position.x;
         //startY = this.Position.y;
+        this.Position = new Vector2(startX, startY);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
-        this.Position = new Vector2(startX, startY);
+        
+    }
+
+    public Pipe GetNextPipe()
+    {
+        var obj = GetCollider();
+        if (obj is Pipe p) return p;
+        return null;
     }
 }
