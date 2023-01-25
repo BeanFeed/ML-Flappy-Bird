@@ -31,7 +31,15 @@ margin_bottom = 14.0
 custom_colors/font_color = Color( 0.12549, 0, 1, 1 )
 text = "Best Score: 0"
 
+[node name="Generation" type="Label" parent="UI"]
+margin_top = 15.0
+margin_right = 120.0
+margin_bottom = 29.0
+custom_colors/font_color = Color( 0.12549, 0, 1, 1 )
+text = "Generation Count: 0"
+
 [node name="Birds" type="Node2D" parent="."]
 
 [node name="BirdSpawner" parent="." instance=ExtResource( 6 )]
 position = Vector2( 40, 151 )
+birdCount = 100

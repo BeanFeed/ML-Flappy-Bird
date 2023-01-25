@@ -17,7 +17,7 @@ public class NNBird : Bird
         nextPipeDetector.Position = new Vector2(Position.x, -7);
         startY = this.Position.y;
     }
-    public override void _PhysicsProcess(float delta)
+    public override void _Process(float delta)
     {
         base._Process(delta);
         if (!isDead)
@@ -26,11 +26,12 @@ public class NNBird : Bird
             if (nextPipe is Pipe pipe)
             {
                 float dist = Position.y - pipe.Position.y;
-                GD.Print(dist);
+                //GD.Print(dist);
                 Brain.SetInput(new float[]{dist});
                 Brain.Process();
                 var outS = Brain.getOutput();
-                if(outS[0] > 0.5) { Flap(); GD.Print("Ai Flap: " + new Random().Next(1,10)); }
+                //GD.Print(outS[0]);
+                if(outS[0] > 0.5) { Flap(); }
             }
             if(GetNode<RayCast2D>("GroundDetector").GetCollider()!= null && ((Node)GetNode<RayCast2D>("GroundDetector").GetCollider()).Name == "BottomBorder") Flap();
         }
@@ -46,14 +47,13 @@ public class NNBird : Bird
     public override void Kill()
     {
         base.Kill();
-        this.GravityScale = 0;
         spawner.CheckAllDead();
-        this.Position = new Vector2(startX, -20);
+        this.Position = new Vector2(-20, -20);
     }
-
+    /*
     public void Respawn()
     {
-        this.GravityScale = 1;
+        //this.Mode = ModeEnum.Rigid;
         this.isDead = false;
         this.LinearVelocity = Vector2.Zero;
         this.Position = new Vector2(startX, startY);
@@ -61,5 +61,5 @@ public class NNBird : Bird
         score = 0;
         pastPipeIDs = new List<int>();
     }
-    
+    */
 }
