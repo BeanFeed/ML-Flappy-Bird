@@ -18,6 +18,13 @@ public class Level : Node2D
 //  {
 //      
 //  }
+
+    public Pipe GetNextPipe()
+    {
+        var nextPipe = GetNode<NextPipeDetector>("NextPipeDetector").GetCollider();
+        if (nextPipe is Pipe p) return p;
+        return null;
+    }
     public void Restart()
     {
         var Pipes = GetNode<Node>("Pipes");

@@ -20,13 +20,14 @@ public class NNBird : Bird
     public override void _Process(float delta)
     {
         base._Process(delta);
+        GetChild<RayCast2D>(3).Position = new Vector2(startX, -7);
         if (!isDead)
         {
-            var nextPipe = GetNode<NextPipeDetector>("NextPipeDetector").GetCollider();
-            if (nextPipe is Pipe pipe)
+            var nextPipe = GetNode<Level>("/root/Level").GetNextPipe();
+            if (nextPipe != null)
             {
-                float dist = Position.y - pipe.Position.y;
-                //GD.Print(dist);
+                float dist = Position.y - nextPipe.Position.y;
+                GD.Print(nextPipe.id);
                 Brain.SetInput(new float[]{dist});
                 Brain.Process();
                 var outS = Brain.getOutput();

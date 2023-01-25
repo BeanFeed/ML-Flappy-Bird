@@ -8,7 +8,7 @@ public class BirdSpawner : Node2D
     // private int a = 2;
     // private string b = "text";
     public int bestScore = 0;
-    private int genCount = 0;
+    private int genCount = 1;
     [Export]
     private int birdCount = 50;
     public float[][][] bestModel = null;
@@ -28,7 +28,6 @@ public class BirdSpawner : Node2D
             bird.startX = 40;
             bird.startY = 151;
             bird.Position = new Vector2(bird.startX, bird.startY);
-            bird.GetChild<RayCast2D>(3).Position = new Vector2(bird.startX, -7);
         }
         
     }
@@ -51,7 +50,6 @@ public class BirdSpawner : Node2D
             bird.startX = 40;
             bird.startY = 151;
             bird.Position = new Vector2(bird.startX, bird.startY);
-            bird.GetChild<RayCast2D>(3).Position = new Vector2(bird.startX, -7);
         }
         foreach(var bird in birds)
         {
@@ -65,7 +63,7 @@ public class BirdSpawner : Node2D
                 bird.Brain.Mutate();
             }
         }
-        birds[0].Brain.SetAllWeights(bestModel);
+        if(bestModel != null) birds[0].Brain.SetAllWeights(bestModel);
         spawnNextFrame = false;
     }
     public void Respawn()
@@ -74,7 +72,7 @@ public class BirdSpawner : Node2D
         {
             var birdScore = bird.GetScore();
             var birdBrainWeights = bird.Brain.GeAllWeights();
-            if (bestScore < birdScore || bestScore == 0)
+            if (bestScore < birdScore)
             {
                 bestScore = birdScore;
                 bestModel = birdBrainWeights;
@@ -85,7 +83,9 @@ public class BirdSpawner : Node2D
         }
         var genLabel = GetNode<Label>("/root/Level/UI/Generation");
         genCount++;
-        genLabel.Text = "Generation Count: " + genCount.ToString();
+        genLabel.Text = "Generation Count: " + genCount;
+        var scoreLabel = GetNode<Label>("/root/Level/UI/Score");
+        scoreLabel.Text = "Best Score: " + bestScore;
         birds.RemoveRange(0, birds.Count);
         spawnNextFrame = true;
     }
@@ -98,5 +98,20 @@ public class BirdSpawner : Node2D
             if (!bird.IsDead()) allDead = false;
         }
         if(allDead) GetNode<Level>("/root/Level").Restart();
+    }
+
+    public void SaveModel()
+    {
+        foreach (var bird in birds)
+        {
+            var birdScore = bird.GetScore();
+            var birdBrainWeights = bird.Brain.GeAllWeights();
+            if (bestScore < birdScore)
+            {
+                bestScore = birdScore;
+                bestModel = birdBrainWeights;
+            }
+
+        }
     }
 }
