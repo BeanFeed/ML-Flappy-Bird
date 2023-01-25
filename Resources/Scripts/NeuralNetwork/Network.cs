@@ -6,7 +6,7 @@ public class NeuralNetwork {
         layers = new NeuralNetworkLayer[layerCounts.Length];
         layers[0] = new NeuralNetworkLayer(layerCounts[0],null);
         for(int i = 1; i < layerCounts.Length; i++) {
-            layers[i] = new NeuralNetworkLayer(layerCounts[i], layers[i--]);
+            layers[i] = new NeuralNetworkLayer(layerCounts[i], layers[i - 1]);
         }
     }
     public void SetInput(float[] inputs) {
@@ -23,7 +23,7 @@ public class NeuralNetwork {
         return output;
     }
     public void Process() {
-        for(int i = 0; i < layers.Length; i++) {
+        for(int i = 1; i < layers.Length; i++) {
             layers[i].Process();
         }
     }

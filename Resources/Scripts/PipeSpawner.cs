@@ -21,7 +21,9 @@ public class PipeSpawner : Node2D
 //  {
 //
 //  }
-    private void Spawn() {
+    private void Spawn()
+    {
+        if (!GetNode<Level>("/root/Level").simGo) return;
         Pipe pipe = GD.Load<PackedScene>("res://Resources/Objects/Pipe.tscn").Instance<Pipe>();
         pipe.Position = new Vector2(this.Position.x,pipe.Position.y);
         GetNode<Node>("/root/Level/Pipes").AddChild(pipe);
