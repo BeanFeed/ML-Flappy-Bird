@@ -39,10 +39,6 @@ public class Bird : RigidBody2D
 		    }
 	    }
 
-	    if (Position.x != startX)
-	    {
-		    this.Position = new Vector2(startX, this.Position.y);
-	    }
     }
 
     private protected virtual void Score()

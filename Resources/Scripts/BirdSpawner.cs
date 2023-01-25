@@ -24,6 +24,7 @@ public class BirdSpawner : Node2D
             birds.Add(bird);
             GetNode<Node2D>("/root/Level/Birds").AddChild(bird);
             bird.startX = Position.x;
+            bird.Position = new Vector2(bird.startX, bird.startY);
         }
         
     }
@@ -32,19 +33,7 @@ public class BirdSpawner : Node2D
     public override void _Process(float delta)
     {
         //GD.Print("test");
-        var allDead = true;
-        if (birds.Count == 0) allDead = false;
-        foreach (var bird in birds)
-        {
-            if (!bird.IsDead()) allDead = false;
-            break;
-        }
 
-        if (allDead)
-        { 
-            GetNode<Level>("/root/Level").Restart();
-            GetNode<Level>("/root/Level").simGo = false;
-        }
     }
 
     public void Respawn()
