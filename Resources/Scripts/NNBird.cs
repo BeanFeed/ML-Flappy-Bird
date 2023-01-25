@@ -57,6 +57,7 @@ public class NNBird : Bird
         this.isDead = false;
         this.LinearVelocity = Vector2.Zero;
         this.Position = new Vector2(startX, startY);
+        GD.Print("Restart: " + Position);
         score = 0;
         pastPipeIDs = new List<int>();
     }

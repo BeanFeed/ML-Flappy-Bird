@@ -35,4 +35,3 @@ text = "Best Score: 0"
 
 [node name="BirdSpawner" parent="." instance=ExtResource( 6 )]
 position = Vector2( 40, 151 )
-birdCount = 50

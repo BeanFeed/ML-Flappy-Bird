@@ -9,7 +9,7 @@ public class BirdSpawner : Node2D
     // private string b = "text";
     public int bestScore = 0;
     [Export]
-    private int birdCount = 1;
+    private int birdCount = 50;
     public float[][][] bestModel = null;
 
     private List<NNBird> birds = new List<NNBird>();
@@ -24,7 +24,9 @@ public class BirdSpawner : Node2D
             birds.Add(bird);
             GetNode<Node2D>("/root/Level/Birds").AddChild(bird);
             bird.startX = Position.x;
+            bird.startY = Position.y;
             bird.Position = new Vector2(bird.startX, bird.startY);
+            bird.GetChild<RayCast2D>(3).Position = new Vector2(bird.startX, -7);
         }
         
     }
