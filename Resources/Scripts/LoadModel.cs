@@ -7,7 +7,7 @@ public class LoadModel : Button
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
-
+    public float[][][] model = null;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -30,6 +30,7 @@ public class LoadModel : Button
             var level = GetNode<Level>("/root/Level");
             level.RunModel(model);
             textIn.Visible = false;
+            this.model = model;
         }
     }
 
