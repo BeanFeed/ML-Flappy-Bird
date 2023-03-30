@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Resources/Scripts/SaveModel.cs" type="Script" id=1]
 [ext_resource path="res://Resources/Objects/Border.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Resources/Scripts/NextPipeDetector.cs" type="Script" id=4]
 [ext_resource path="res://Resources/Scripts/Level.cs" type="Script" id=5]
 [ext_resource path="res://Resources/Objects/BirdSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/Scripts/LoadModel.cs" type="Script" id=7]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 5 )
@@ -43,16 +44,32 @@ text = "Generation Count: 0"
 [node name="Button" type="Button" parent="UI"]
 margin_left = 1.0
 margin_top = 31.0
-margin_right = 13.0
+margin_right = 86.0
 margin_bottom = 51.0
+rect_pivot_offset = Vector2( -127, -17 )
 text = "Save Model"
 script = ExtResource( 1 )
+
+[node name="Button2" type="Button" parent="UI"]
+margin_left = 92.0
+margin_top = 31.0
+margin_right = 177.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( -132, -2 )
+text = "Load Model"
+script = ExtResource( 7 )
+
+[node name="ModelInput" type="TextEdit" parent="UI"]
+visible = false
+margin_left = 1.0
+margin_top = 56.0
+margin_right = 178.0
+margin_bottom = 91.0
 
 [node name="Birds" type="Node2D" parent="."]
 
 [node name="BirdSpawner" parent="." instance=ExtResource( 6 )]
 position = Vector2( 40, 151 )
-birdCount = 500
 
 [node name="NextPipeDetector" type="RayCast2D" parent="."]
 position = Vector2( 20, -10 )

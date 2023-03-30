@@ -114,4 +114,28 @@ public class BirdSpawner : Node2D
 
         }
     }
+    public void SpawnModel(float[][][] model) {
+        foreach (var birb in birds)
+        {
+            var birdScore = birb.GetScore();
+            var birdBrainWeights = birb.Brain.GeAllWeights();
+            if (bestScore < birdScore)
+            {
+                bestScore = birdScore;
+                bestModel = birdBrainWeights;
+            }
+            
+            birb.QueueFree();
+
+        }
+
+        var bird = GD.Load<PackedScene>("res://Resources/Objects/NNBird.tscn").Instance<NNBird>();
+        bird.SetSpawner(this);
+        birds.Add(bird);
+        GetNode<Node2D>("/root/Level/Birds").AddChild(bird);
+        bird.startX = 40;
+        bird.startY = 151;
+        bird.Position = new Vector2(bird.startX, bird.startY);
+        bird.Brain.SetAllWeights(model);
+    }
 }

@@ -37,4 +37,15 @@ public class Level : Node2D
         Spawner.Respawn();
         simGo = true;
     }
+    public void RunModel(float[][][] model) {
+        var Pipes = GetNode<Node>("Pipes");
+        var Spawner = GetNode<BirdSpawner>("BirdSpawner");
+        var pipeChildren = Pipes.GetChildren();
+        foreach (Node pipe in pipeChildren)
+        {
+            pipe.QueueFree();
+        }
+        Spawner.SpawnModel(model);
+        simGo = true;
+    }
 }
