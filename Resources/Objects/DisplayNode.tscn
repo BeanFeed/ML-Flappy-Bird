@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Textures/node.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Scripts/DisplayNode.cs" type="Script" id=2]
+
+[node name="Node2D" type="Control"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 36.0
+margin_top = 39.0
+margin_right = 292.0
+margin_bottom = 295.0
+texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Popup" type="PopupPanel" parent="TextureButton"]
+margin_left = 256.0
+margin_top = 8.0
+margin_right = 392.0
+margin_bottom = 48.0
+
+[node name="DisplayValue" type="Label" parent="TextureButton/Popup"]
+margin_left = 4.0
+margin_top = 13.0
+margin_right = 87.0
+margin_bottom = 27.0
+text = "Value: 00000"
+
+[connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="Mouse_Over"]
+[connection signal="mouse_exited" from="TextureButton" to="TextureButton" method="Mouse_Leave"]
