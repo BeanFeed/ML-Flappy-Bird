@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Resources/Scripts/SaveModel.cs" type="Script" id=1]
 [ext_resource path="res://Resources/Objects/Border.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Resources/Scripts/Level.cs" type="Script" id=5]
 [ext_resource path="res://Resources/Objects/BirdSpawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Scripts/LoadModel.cs" type="Script" id=7]
+[ext_resource path="res://Resources/Objects/DisplayNode.tscn" type="PackedScene" id=8]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 5 )
@@ -74,6 +75,127 @@ margin_left = 1.0
 margin_top = 56.0
 margin_right = 178.0
 margin_bottom = 91.0
+
+[node name="Panel" type="Panel" parent="UI"]
+margin_left = 291.0
+margin_top = 2.0
+margin_right = 510.0
+margin_bottom = 105.0
+
+[node name="Lines" type="Control" parent="UI/Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="line0" type="ColorRect" parent="UI/Panel/Lines"]
+margin_left = 34.0
+margin_top = 49.0
+margin_right = 181.0
+margin_bottom = 53.0
+
+[node name="line1" type="ColorRect" parent="UI/Panel/Lines"]
+margin_left = 34.0
+margin_top = 49.0
+margin_right = 115.0
+margin_bottom = 53.0
+rect_rotation = -29.8
+
+[node name="line2" type="ColorRect" parent="UI/Panel/Lines"]
+margin_left = 34.0
+margin_top = 49.0
+margin_right = 115.0
+margin_bottom = 53.0
+rect_rotation = 29.3
+
+[node name="line3" type="ColorRect" parent="UI/Panel/Lines"]
+margin_left = 34.0
+margin_top = 49.0
+margin_right = 115.0
+margin_bottom = 53.0
+rect_rotation = 15.3
+
+[node name="line4" type="ColorRect" parent="UI/Panel/Lines"]
+margin_left = 34.0
+margin_top = 49.0
+margin_right = 112.0
+margin_bottom = 53.0
+rect_rotation = -15.8
+
+[node name="line5" type="ColorRect" parent="UI/Panel/Lines"]
+margin_left = 179.24
+margin_top = 52.9637
+margin_right = 260.24
+margin_bottom = 56.9637
+rect_rotation = 150.0
+
+[node name="line6" type="ColorRect" parent="UI/Panel/Lines"]
+margin_left = 179.24
+margin_top = 52.9637
+margin_right = 260.24
+margin_bottom = 56.9637
+rect_rotation = 210.0
+
+[node name="line7" type="ColorRect" parent="UI/Panel/Lines"]
+margin_left = 179.24
+margin_top = 52.9637
+margin_right = 260.24
+margin_bottom = 56.9637
+rect_rotation = 195.0
+
+[node name="line8" type="ColorRect" parent="UI/Panel/Lines"]
+margin_left = 179.24
+margin_top = 52.9637
+margin_right = 257.24
+margin_bottom = 56.9637
+rect_rotation = 165.0
+
+[node name="in0" parent="UI/Panel" instance=ExtResource( 8 )]
+margin_left = 36.0
+margin_top = 51.0
+margin_right = 36.0
+margin_bottom = 51.0
+rect_scale = Vector2( 0.05, 0.05 )
+
+[node name="out0" parent="UI/Panel" instance=ExtResource( 8 )]
+margin_left = 178.0
+margin_top = 51.0
+margin_right = 178.0
+margin_bottom = 51.0
+rect_scale = Vector2( 0.05, 0.05 )
+
+[node name="mid0" parent="UI/Panel" instance=ExtResource( 8 )]
+margin_left = 107.0
+margin_top = 11.0
+margin_right = 107.0
+margin_bottom = 11.0
+rect_scale = Vector2( 0.05, 0.05 )
+
+[node name="mid1" parent="UI/Panel" instance=ExtResource( 8 )]
+margin_left = 107.0
+margin_top = 31.0
+margin_right = 107.0
+margin_bottom = 31.0
+rect_scale = Vector2( 0.05, 0.05 )
+
+[node name="mid2" parent="UI/Panel" instance=ExtResource( 8 )]
+margin_left = 107.0
+margin_top = 51.0
+margin_right = 107.0
+margin_bottom = 51.0
+rect_scale = Vector2( 0.05, 0.05 )
+
+[node name="mid3" parent="UI/Panel" instance=ExtResource( 8 )]
+margin_left = 107.0
+margin_top = 71.0
+margin_right = 107.0
+margin_bottom = 71.0
+rect_scale = Vector2( 0.05, 0.05 )
+
+[node name="mid4" parent="UI/Panel" instance=ExtResource( 8 )]
+margin_left = 107.0
+margin_top = 91.0
+margin_right = 107.0
+margin_bottom = 91.0
+rect_scale = Vector2( 0.05, 0.05 )
 
 [node name="Birds" type="Node2D" parent="."]
 

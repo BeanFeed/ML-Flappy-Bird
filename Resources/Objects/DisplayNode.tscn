@@ -1,30 +1,53 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Resources/Textures/node.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Scripts/DisplayNode.cs" type="Script" id=2]
 
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
 [node name="Node2D" type="Control"]
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 36.0
-margin_top = 39.0
-margin_right = 292.0
-margin_bottom = 295.0
+margin_left = -128.0
+margin_top = -128.0
+margin_right = 128.0
+margin_bottom = 128.0
 texture_normal = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="Popup" type="PopupPanel" parent="TextureButton"]
-margin_left = 256.0
-margin_top = 8.0
-margin_right = 392.0
-margin_bottom = 48.0
+[node name="Popup" type="Panel" parent="TextureButton"]
+visible = false
+margin_left = -956.0
+margin_top = 294.0
+margin_right = -574.0
+margin_bottom = 452.0
+rect_scale = Vector2( 5, 5 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="DisplayValue" type="Label" parent="TextureButton/Popup"]
-margin_left = 4.0
-margin_top = 13.0
-margin_right = 87.0
-margin_bottom = 27.0
-text = "Value: 00000"
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 95.0
+margin_bottom = 15.0
+rect_scale = Vector2( 4, 4 )
+text = "Value: 0"
+
+[node name="DisplayWeight" type="Label" parent="TextureButton/Popup"]
+margin_left = 1.0
+margin_top = 47.0
+margin_right = 95.0
+margin_bottom = 61.0
+rect_scale = Vector2( 4, 4 )
+text = "Weight: 0"
+
+[node name="DisplayBias" type="Label" parent="TextureButton/Popup"]
+margin_left = 1.0
+margin_top = 94.0
+margin_right = 95.0
+margin_bottom = 108.0
+rect_scale = Vector2( 4, 4 )
+text = "Bias: 0"
 
 [connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="Mouse_Over"]
 [connection signal="mouse_exited" from="TextureButton" to="TextureButton" method="Mouse_Leave"]
